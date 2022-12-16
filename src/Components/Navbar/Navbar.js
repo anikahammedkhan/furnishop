@@ -17,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/contact">Contact</Link></li>
     </>
     return (
-        <div>
+        <div className='sticky top-0 z-20'>
             <div className='bg-purple-700 flex justify-evenly py-2'>
                 <div className='flex gap-4'>
                     <div className='flex items-center gap-2 text-white'>
@@ -47,32 +47,34 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
-            <div className="bg-base-100 navbar w-3/5 mx-auto">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <div className='bg-base-100'>
+                <div className="navbar w-3/4 mx-auto">
+                    <div className="navbar-start">
+                        <div className="dropdown">
+                            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                {menu}
+                            </ul>
+                        </div>
+                        <Link className="text-3xl font-bold"
+                            style={{ fontFamily: 'Sofia', color: 'black' }} to="/"
+                        >Furnishop</Link>
+                    </div>
+                    <div className="navbar-center hidden lg:flex">
+                        <ul className="menu menu-horizontal px-1">
                             {menu}
                         </ul>
                     </div>
-                    <Link className="text-3xl font-bold"
-                        style={{ fontFamily: 'Sofia', color: 'black' }} to="/"
-                    >Furnishop</Link>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {menu}
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <div className="form-control">
-                        <div className="input-group">
-                            <input type="text" placeholder="Search…" className="input input-bordered" />
-                            <button className="btn bg-pink-500 btn-square border-none hover:bg-pink-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                            </button>
+                    <div className="navbar-end">
+                        <div className="form-control">
+                            <div className="input-group">
+                                <input type="text" placeholder="Search…" className="input input-bordered" />
+                                <button className="btn bg-pink-500 btn-square border-none hover:bg-pink-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
